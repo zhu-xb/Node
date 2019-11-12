@@ -9,7 +9,7 @@ const urlencode = require('urlencode');
 
 
 // ES6语法 创建并导出静态类
-class StaticServer {
+module.exports = class StaticServer {
 
     /**
      * 构造函数初始化
@@ -125,17 +125,4 @@ class StaticServer {
         res.end()
     }
 
-    // 发送文件内容
-    sendData(res, data, url) {
-        res.writeHead(200, {
-            // 获取文件类型头,去掉最开始的那个/ 故从1开始截取
-            'Content-Type': mime[url.substring(1)]
-        })
-        res.write(data)
-        res.end()
-    }
 }
-
-let server = new StaticServer()
-
-server.run()

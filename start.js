@@ -1,4 +1,6 @@
+'use strict'
 
+const StaticServer = require('./http.js')
 let server = new StaticServer()
 
 server.run({
@@ -7,3 +9,5 @@ server.run({
 	filePath: 'project',
 	homePage: 'index.html'
 })
+
+// server.close()
